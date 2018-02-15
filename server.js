@@ -19,9 +19,10 @@ var friendsList = []; //stores list of possible.
 
 // Routes
 // =============================================================
-// Basic route that sends the user first to the AJAX Page
+// Route to html pages.
 app.use("/", html);
 
+//Route to api pages.
 app.use("/", api);
 // Starts the server to begin listening
 // =============================================================

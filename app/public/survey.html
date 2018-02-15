@@ -264,6 +264,15 @@
         </footer>
 
         <script type="text/javascript">
+
+            //Prevents jquery from creating scores key as scores[]
+            if (typeof jQuery !== 'undefined') {
+
+                jQuery.ajaxSettings.traditional = true;
+
+            };
+
+            //configures the search option for dropdowns.
             var config = {
                 ".chosen-select": {},
                 ".chosen-select-deselect": {
@@ -280,10 +289,12 @@
                 }
             };
 
+            //applies them to the selector.
             for (var selector in config) {
                 $(selector).chosen(config[selector]);
             }
 
+            //function that validates whether form is correctly filled or not.
             function validateForm() {
 
                     var isValid = true;
@@ -305,6 +316,9 @@
 
             }
 
+            //listener that, upon submitting, creates a json object
+            //and uses ajax to post it. if form is invalid, displays
+            //an alert.
             $('#submit').on("click", function (event) {
 
                 event.preventDefault();

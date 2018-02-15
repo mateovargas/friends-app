@@ -6,7 +6,7 @@ var htmlRouter = express.Router();
 htmlRouter.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
 });
-// define the about route
+// define the survey route
 htmlRouter.get('/survey', function (req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
